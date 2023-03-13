@@ -26,11 +26,11 @@ public class DebitPage {
     private SelenideElement errorMessageCardExpirationDate = $(byText("Неверно указан срок действия карты"));
 
     public void fillForm(DataHelper.AuthInfo info) {
-        cardNumber.setValue(info.getCardNumber());
-        cardMonth.setValue(info.getCardMonth());
-        cardYear.setValue(info.getCardYear());
-        cardHolder.setValue(info.getCardHolder());
-        cardCVС.setValue(info.getCardCVС());
+        cardNumber.setValue(info.getNumber());
+        cardMonth.setValue(info.getMonth());
+        cardYear.setValue(info.getYear());
+        cardHolder.setValue(info.getHolder());
+        cardCVС.setValue(info.getCvc());
         continueButton.click();
     }
 

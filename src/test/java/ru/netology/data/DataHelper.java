@@ -75,11 +75,11 @@ public class DataHelper {
 
     @Value
     public static class AuthInfo {
-        private String cardNumber;
-        private String cardMonth;
-        private String cardYear;
-        private String cardHolder;
-        private String cardCVС;
+        String number;
+        String month;
+        String year;
+        String holder;
+        String cvc;
     }
 
     public static AuthInfo getAuthInfo() {
