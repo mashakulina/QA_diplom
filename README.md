@@ -2,21 +2,22 @@
 
 ### Используемое окружение:
 1. Java 11
-1. IntelliJ IDEA
-1. Docker Desktop
-1. Браузер: Google Chrome v. 110 или ранее
-1. Убедиться, что порты 8080, 9999 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны.
+2. IntelliJ IDEA
+3. Docker Desktop
+4. Установить Node.js
+5. Браузер: Google Chrome v. 110 или ранее
+6. Убедиться, что порты 8080, 9999 и 5432 или 3306 (в зависимости от выбранной базы данных) свободны.
 
 ### Подготовка перед запуском:
 1. Клонировать репозиторий на компьютер
 1. Запустить Docker Desktop
 1. Открыть проект в IntelliJ IDEA
 
-> По умолчанию в build.gradle и application.properties задано подключение к БД MySQL. Для подключение к БД Postgres нужно:<br/>1. Замьютить через ctrl+/ предыдущую базу, и, с помощью той же комбинации, размьютить данные БД Postgres.<br/>2. Обновить build.gradle
-
 ### Этапы перед запуском тестов:
 1. Находясь в корневой папке проекта ввести в терминале команду `docker-compose up` для запуска образов БД и симулятор банковских сервисов
-1. В новой вкладке терминала запустить SUT через команду `java -jar artifacts/aqa-shop.jar`
+2. В новой вкладке терминала запустить SUT через команду:
+- для MySQL - `java -jar .\artifacts\aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app-db`
+- для PostgresSQL - `java -jar .\artifacts\aqa-shop.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/postgres`
 
 ### Запуск тестов:
 1. В новой вкладке терминала запустить тесты через команду `.\gradlew clean test` или `gradlew clean test`

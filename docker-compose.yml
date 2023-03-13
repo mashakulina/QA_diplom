@@ -19,6 +19,5 @@ services:
       - '5432:5432'
   node-app:
     build: ./gate-simulator
-    image: node-app:1.1
     ports:
       - '9999:9999'
