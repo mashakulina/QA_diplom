@@ -186,5 +186,20 @@ public class DataHelper {
     public static AuthInfo getWordsInsteadOfCardCVСField() {
         return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), cardHolder, randomWords);
     }
+    public static AuthInfo getPayWithoutCardNumber() {
+        return new AuthInfo("", getCardMonth(), getCardYear(), cardHolder, getCodeCVС());
+    }
+    public static AuthInfo getPayWithoutCardMonth() {
+        return new AuthInfo(approvedCardNumber, "", getCardYear(), cardHolder, getCodeCVС());
+    }
+    public static AuthInfo getPayWithoutCardYear() {
+        return new AuthInfo(approvedCardNumber, getCardMonth(), "", cardHolder, getCodeCVС());
+    }
+    public static AuthInfo getPayWithoutCardHolder() {
+        return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), "", getCodeCVС());
+    }
+    public static AuthInfo getPayWithoutCodeCVС() {
+        return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), cardHolder, "");
+    }
 
 }

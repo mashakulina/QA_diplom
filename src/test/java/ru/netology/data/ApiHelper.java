@@ -38,4 +38,24 @@ public class ApiHelper {
                 .statusCode(200)
                 .extract().response().asString();
     }
+    public static String fillPaymentDebitFormWithOneEmptyField(DataHelper.AuthInfo authInfo) {
+        return given()
+                .spec(requestSpec)
+                .body(authInfo)
+                .when()
+                .post("/api/v1/credit")
+                .then()
+                .statusCode(500)
+                .extract().response().asString();
+    }
+    public static String fillPaymentCreditFormWithOneEmptyField(DataHelper.AuthInfo authInfo) {
+        return given()
+                .spec(requestSpec)
+                .body(authInfo)
+                .when()
+                .post("/api/v1/credit")
+                .then()
+                .statusCode(500)
+                .extract().response().asString();
+    }
 }

@@ -100,4 +100,106 @@ public class TestForm {
         mainPage.transferWasDecline();
     }
 
+    @Test
+    @DisplayName("Debit page: Form not submitting without card number")
+    void Test7() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithoutCardNumber();
+        debitCard.fillForm(authInfo);
+        debitPage.errorMessageCardNumber();
+    }
+    @Test
+    @DisplayName("Debit page: Form not submitting without card month")
+    void Test8() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithoutCardMonth();
+        debitCard.fillForm(authInfo);
+        debitPage.errorMessageCardMonth();
+    }
+    @Test
+    @DisplayName("Debit page: Form not submitting without card year")
+    void Test9() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithoutCardYear();
+        debitCard.fillForm(authInfo);
+        debitPage.errorMessageCardYear();
+    }
+    @Test
+    @DisplayName("Debit page: Form not submitting without card holder")
+    void Test10() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithoutCardHolder();
+        debitCard.fillForm(authInfo);
+        debitPage.errorMessageCardHolder();
+    }
+    @Test
+    @DisplayName("Debit page: Form not submitting without code CVC")
+    void Test11() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithoutCodeCVС();
+        debitCard.fillForm(authInfo);
+        debitPage.errorMessageCardCVC();
+    }
+
+    @Test
+    @DisplayName("Credit page: Form not submitting without card number")
+    void Test12() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithCreditCard();
+        val authInfo = DataHelper.getPayWithoutCardNumber();
+        creditCard.fillForm(authInfo);
+        creditPage.errorMessageCardNumber();
+    }
+    @Test
+    @DisplayName("Credit page: Form not submitting without card month")
+    void Test13() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithCreditCard();
+        val authInfo = DataHelper.getPayWithoutCardMonth();
+        creditCard.fillForm(authInfo);
+        creditPage.errorMessageCardMonth();
+    }
+    @Test
+    @DisplayName("Credit page: Form not submitting without card year")
+    void Test14() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithCreditCard();
+        val authInfo = DataHelper.getPayWithoutCardYear();
+        creditCard.fillForm(authInfo);
+        creditPage.errorMessageCardYear();
+    }
+    @Test
+    @DisplayName("Credit page: Form not submitting without card holder")
+    void Test15() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithCreditCard();
+        val authInfo = DataHelper.getPayWithoutCardHolder();
+        creditCard.fillForm(authInfo);
+        creditPage.errorMessageCardHolder();
+    }
+    @Test
+    @DisplayName("Credit page: Form not submitting without code CVC")
+    void Test16() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithCreditCard();
+        val authInfo = DataHelper.getPayWithoutCodeCVС();
+        creditCard.fillForm(authInfo);
+        creditPage.errorMessageCardCVC();
+    }
+
 }
