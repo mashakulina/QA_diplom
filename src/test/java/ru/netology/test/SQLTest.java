@@ -35,10 +35,10 @@ public class SQLTest {
         open("http://localhost:8080/");
     }
 
-//    @AfterAll
-//    static void setUP() {
-//        SQLHelper.cleanDB();
-//    }
+    @AfterAll
+    static void setUP() {
+        SQLHelper.cleanDB();
+    }
 
     @Test
     @SneakyThrows

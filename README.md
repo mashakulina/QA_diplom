@@ -21,8 +21,8 @@
 
 ### Запуск тестов:
 1. В новой вкладке терминала запустить тесты через команду:
-- для MySQL - `.\gradlew clean test -DdbUrl=jdbc:mysql://localhost:3306/app-db`
-- для PostgresSQL - `.\gradlew clean test -DdbUrl=jdbc:postgresql://localhost:5432/postgres`
+- если запущена СУБД MySQL - `.\gradlew clean test -DdbUrl=jdbc:mysql://localhost:3306/app-db`
+- если запущена СУБД PostgresSQL - `.\gradlew clean test -DdbUrl=jdbc:postgresql://localhost:5432/postgres`
 
 ### Формирование отчета AllureReport по результатам тестирования
 В новой вкладке терминала или нажав двойной Ctrl ввести команду `.\gradlew allureServe`. <br/>
