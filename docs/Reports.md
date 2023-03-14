@@ -17,7 +17,7 @@
 
 
 **Скриншот из Allure (для MySQL и PostgresSQL одинаково)**
-![](../../доки для диплома/Cкриншоты/allure MySQL.png)
+![allure MySQL](https://user-images.githubusercontent.com/103326791/225156158-524d8b8d-378a-46e2-89d3-816aa70a1057.png)
 
 ### Общие рекомендации:
 1. Стоит уделить внимание форме ввода данных:
