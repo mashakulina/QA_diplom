@@ -12,8 +12,9 @@
 2 тест-кейса с "Broken status" - это два тест-кейса, которые всегда будут в этом статусе в зависимости от выбранной БД.<br/>
 Они проверяют сохранение данных по дате и времени. <br/>
 Каждый из этих тест-кейсов подписан "Only for".<br/>
-![](../../доки для диплома/Cкриншоты/Only for Postgres.png)
-![](../../доки для диплома/Cкриншоты/Only for MySQL.png)
+![Only for MySQL](https://user-images.githubusercontent.com/103326791/225156084-8c0efb13-aeff-41be-99ff-4420a948e699.png)
+![Only for Postgres](https://user-images.githubusercontent.com/103326791/225156099-039bcf0a-10a0-4e04-a6e5-65f614d61d70.png)
+
 
 **Скриншот из Allure (для MySQL и PostgresSQL одинаково)**
 ![](../../доки для диплома/Cкриншоты/allure MySQL.png)
