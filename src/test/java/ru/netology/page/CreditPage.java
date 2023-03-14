@@ -81,4 +81,8 @@ public class CreditPage {
     public void errorPayWithLongCVC() {
         assertNotEquals(DataHelper.getCVCLongerThanThree(), cardCVС.getValue());
     }
+
+    public void errorPayWithMaestroCard() {
+        assertNotEquals(DataHelper.cardNumberMaestro, cardNumber.getValue());
+    }
 }

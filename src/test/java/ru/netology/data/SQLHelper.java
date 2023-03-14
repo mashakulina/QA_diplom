@@ -20,7 +20,7 @@ public class SQLHelper {
     static QueryRunner runner = new QueryRunner();
 
     @SneakyThrows
-    public static Connection connect() throws SQLException {
+    public static Connection connect() {
         return DriverManager.getConnection(System.getProperty("dbUrl"), "user", "pass");
     }
 
@@ -37,7 +37,7 @@ public class SQLHelper {
 
 
     @SneakyThrows
-    public static String getPaymentStatus() throws SQLException{
+    public static String getPaymentStatus() {
         String paymentStatus = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -47,7 +47,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreditRequestStatus() throws SQLException {
+    public static String getCreditRequestStatus() {
         String creditRequestStatus = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -57,7 +57,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreatedOrderStatus() throws SQLException {
+    public static String getCreatedOrderStatus() {
         String createdOrderStatus = "SELECT created FROM order_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -67,7 +67,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreatedPaymentStatus() throws SQLException {
+    public static String getCreatedPaymentStatus() {
         String createdPaymentStatus = "SELECT created FROM payment_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -77,7 +77,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreatedCreditRequestStatus() throws SQLException {
+    public static String getCreatedCreditRequestStatus() {
         String createdCreditRequestStatus = "SELECT created FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -87,7 +87,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getTransactionId() throws SQLException {
+    public static String getTransactionId() {
         String transactionID = "SELECT transaction_id FROM payment_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -97,7 +97,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getPaymentId() throws SQLException {
+    public static String getPaymentId() {
         String paymentID = "SELECT payment_id FROM order_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -107,7 +107,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getBankId() throws SQLException {
+    public static String getBankId() {
         String bankID = "SELECT bank_id FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
         try (
                 Connection conn = connect();
@@ -119,7 +119,7 @@ public class SQLHelper {
 //    для Postgres
 
     @SneakyThrows
-    public static String getCreatedOrderStatusPostgres() throws SQLException {
+    public static String getCreatedOrderStatusPostgres() {
         String createdOrderStatus = "SELECT created FROM order_entity ORDER BY created DESC LIMIT 1;";
         Timestamp created;
         try (
@@ -131,7 +131,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreatedPaymentStatusPostgres() throws SQLException {
+    public static String getCreatedPaymentStatusPostgres() {
         String createdPaymentStatus = "SELECT created FROM payment_entity ORDER BY created DESC LIMIT 1;";
         Timestamp created;
         try (
@@ -143,7 +143,7 @@ public class SQLHelper {
     }
 
     @SneakyThrows
-    public static String getCreatedCreditRequestStatusPostgres() throws SQLException {
+    public static String getCreatedCreditRequestStatusPostgres() {
         String createdCreditRequestStatus = "SELECT created FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
         Timestamp created;
         try (

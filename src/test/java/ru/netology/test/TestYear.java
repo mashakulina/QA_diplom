@@ -58,7 +58,7 @@ public class TestYear {
         val debitCard = mainPage.payWithDebitCard();
         val authInfo = DataHelper.getSevenYearsFromCurrentYearInsteadOfCardYearField();
         debitCard.fillForm(authInfo);
-        debitPage.errorMessageCardYear();
+        debitPage.errorMessageCardYearExpirationDate();
     }
 
     @Test
@@ -102,7 +102,7 @@ public class TestYear {
         val creditCard = mainPage.payWithCreditCard();
         val authInfo = DataHelper.getSevenYearsFromCurrentYearInsteadOfCardYearField();
         creditCard.fillForm(authInfo);
-        creditPage.errorMessageCardYear();
+        creditPage.errorMessageCardYearExpirationDate();
     }
 
     @Test

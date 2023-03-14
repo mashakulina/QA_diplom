@@ -6,6 +6,7 @@ import ru.netology.data.DataHelper;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class DebitPage {
@@ -80,5 +81,9 @@ public class DebitPage {
 
     public void errorPayWithLongCVC() {
         assertNotEquals(DataHelper.getCVCLongerThanThree(), cardCVС.getValue());
+    }
+
+    public void errorPayWithMaestroCard() {
+        assertNotEquals(DataHelper.cardNumberMaestro, cardNumber.getValue());
     }
 }

@@ -17,6 +17,7 @@ public class DataHelper {
 
     public static String approvedCardNumber = "4444 4444 4444 4441";
     public static String declinedCardNumber = "4444 4444 4444 4442";
+    public static String cardNumberMaestro = "4444 4444 4444 1234 56";
     public static String cardHolder = "PETR PETROV";
     public static String cardHolderOnlyName = "PETR";
     public static String cardHolderRus = "ПЕТР ПЕТРОВ";
@@ -91,8 +92,8 @@ public class DataHelper {
         return new AuthInfo(declinedCardNumber, getCardMonth(), getCardYear(), cardHolder, getCodeCVС());
     }
 
-    public static AuthInfo getPayWithAnotherCardNumber() {
-        return new AuthInfo(getAnotherCardNumber(), getCardMonth(), getCardYear(), cardHolder, getCodeCVС());
+    public static AuthInfo getPayWithMaestroCard() {
+        return new AuthInfo(cardNumberMaestro, getCardMonth(), getCardYear(), cardHolder, getCodeCVС());
     }
 
     public static AuthInfo getPayWithShortCardNumber() {
@@ -186,18 +187,23 @@ public class DataHelper {
     public static AuthInfo getWordsInsteadOfCardCVСField() {
         return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), cardHolder, randomWords);
     }
+
     public static AuthInfo getPayWithoutCardNumber() {
         return new AuthInfo("", getCardMonth(), getCardYear(), cardHolder, getCodeCVС());
     }
+
     public static AuthInfo getPayWithoutCardMonth() {
         return new AuthInfo(approvedCardNumber, "", getCardYear(), cardHolder, getCodeCVС());
     }
+
     public static AuthInfo getPayWithoutCardYear() {
         return new AuthInfo(approvedCardNumber, getCardMonth(), "", cardHolder, getCodeCVС());
     }
+
     public static AuthInfo getPayWithoutCardHolder() {
         return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), "", getCodeCVС());
     }
+
     public static AuthInfo getPayWithoutCodeCVС() {
         return new AuthInfo(approvedCardNumber, getCardMonth(), getCardYear(), cardHolder, "");
     }

@@ -44,15 +44,27 @@ public class TestCardNumber {
     void Test1() {
         val mainPage = new MainPage();
         val debitPage = new DebitPage();
-        val card = mainPage.payWithDebitCard();
+        val debitCard = mainPage.payWithDebitCard();
         val authInfo = DataHelper.getPayWithShortCardNumber();
-        card.fillForm(authInfo);
+        debitCard.fillForm(authInfo);
         debitPage.errorMessageCardNumber();
     }
 
     @Test
-    @DisplayName("Debit page: The field must not accept words")
+    @DisplayName("Debit page: Error when entering Maestro card number")
     void Test2() {
+        val mainPage = new MainPage();
+        val debitPage = new DebitPage();
+        val debitCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithMaestroCard();
+        debitCard.fillForm(authInfo);
+        debitPage.errorPayWithMaestroCard();
+    }
+
+
+    @Test
+    @DisplayName("Debit page: The field must not accept words")
+    void Test3() {
         val mainPage = new MainPage();
         val debitPage = new DebitPage();
         val debitCard = mainPage.payWithDebitCard();
@@ -63,7 +75,7 @@ public class TestCardNumber {
 
     @Test
     @DisplayName("Debit page: The field must not accept symbols")
-    void Test3() {
+    void Test4() {
         val mainPage = new MainPage();
         val debitPage = new DebitPage();
         val debitCard = mainPage.payWithDebitCard();
@@ -74,7 +86,7 @@ public class TestCardNumber {
 
     @Test
     @DisplayName("Credit page: Error when entering short card number")
-    void Test4() {
+    void Test5() {
         val mainPage = new MainPage();
         val creditPage = new CreditPage();
         val creditCard = mainPage.payWithCreditCard();
@@ -84,8 +96,19 @@ public class TestCardNumber {
     }
 
     @Test
+    @DisplayName("Credit page: Error when entering Maestro card number")
+    void Test6() {
+        val mainPage = new MainPage();
+        val creditPage = new CreditPage();
+        val creditCard = mainPage.payWithDebitCard();
+        val authInfo = DataHelper.getPayWithMaestroCard();
+        creditCard.fillForm(authInfo);
+        creditPage.errorPayWithMaestroCard();
+    }
+
+    @Test
     @DisplayName("Credit page: The field must not accept words")
-    void Test5() {
+    void Test7() {
         val mainPage = new MainPage();
         val creditPage = new CreditPage();
         val creditCard = mainPage.payWithCreditCard();
@@ -96,7 +119,7 @@ public class TestCardNumber {
 
     @Test
     @DisplayName("Credit page: The field must not accept symbols")
-    void Test6() {
+    void Test8() {
         val mainPage = new MainPage();
         val creditPage = new CreditPage();
         val creditCard = mainPage.payWithCreditCard();
